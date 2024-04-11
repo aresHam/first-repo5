@@ -1,0 +1,28 @@
+public static void updateList(ArrayList<User> list) {
+		System.out.println("수정할 이메일을 입력하시오.");
+		String searchEmail = sc.nextLine();
+		boolean flag = false;
+		for(User data : list) {
+			String[] menu = {"이름","비밀번호","나이"};
+			if(data.getEmail().equals(searchEmail)) {
+				System.out.println("무엇을 수정할까요? (1.이름, 2.비밀번호 3.나이) : ");
+				System.out.print("이름, 비밀번호, 이메일, 나이 : ");
+				String[] input = sc.nextLine().split(",");
+				data.setName(input[0]);
+				data.setPassword(input[1]);
+				data.setEmail(input[2]);
+				data.setAge(Integer.parseInt(input[3]));
+				flag = true;
+			}
+			if(flag == false) System.out.println("존재하지 않는 이메일입니다.");
+		}
+		System.out.println("수정이 완료되었습니다. 저장해주세요.");
+	}
+
+
+
+//이메일 패턴 검색 :https://jamesdreaming.tistory.com/196
+
+
+
+
